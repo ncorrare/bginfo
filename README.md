@@ -1,31 +1,26 @@
-# skel
-[![Build Status](https://travis-ci.org/ncorrare/skel.svg?branch=master)](https://travis-ci.org/ncorrare/skel)
+# bginfo
 
 #### Table of Contents
 
 1. [Overview](#overview)
-2. [Setup - The basics of getting started with skel](#setup)
+2. [Setup - The basics of getting started with bginfo](#setup)
     * [Setup requirements](#setup-requirements)
-    * [Beginning with skel](#beginning-with-skel)
+    * [Beginning with bginfo](#beginning-with-skel)
 
 ## Overview
 
-This is just a boilerplate module that includes testing and automatic deployment to the forge.
+BGInfo automatically displays relevant information about a Windows computer on the desktop's background, such as the computer name, IP address, service pack version, and more. This module installs bginfo using chocolatey and deploys a default template configuration.
 
 ## Setup
 
-### Setup Requirements **OPTIONAL**
+### Setup Requirements 
+Classify your Windows node with the bginfo class. You'll need chocolatey there at some point to install the software.
+The module includes the default bgi configuration file which includes a lot of information, feel free to replace it with one that fits your use case.
+For more information on bginfo, visit https://technet.microsoft.com/en-us/sysinternals/bginfo.aspx
 
-You need to create (using travis encrypt, from the travis gem) to create the following secure environment variables:
+### Beginning with bginfo
 
-- GITHUB_SECRET_TOKEN
-- BLACKSMITH_FORGE_USERNAME
-- BLACKSMITH_FORGE_PASSWORD
-
-and set up USENETWORK to true and DEPLOY to true in order for deployment to work.
-
-Remaining information is popuplated from Travis environment variables.
-### Beginning with skel
-
-Create a branch, and after doing a PR it will test and merge automatically if tests work. If DEPLOY is set to true it will tag, change metadata.json, commit, push, build and deploy to the forge
-
+There are three parameters in the init class:
+ * $conffile: Puppet path to the configuration file.
+ * $confpath: Where to store BGInfo configuration's file in the target system.
+ * $setonstart: Configure a BAT script to start bginfo when any user logs in.
