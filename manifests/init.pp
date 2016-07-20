@@ -1,9 +1,9 @@
 class bginfo (
-  String $conffile = $bginfo::params::conffile,
-  String $confpath = $bginfo::params::confpath,
+  String $bgifile = $bginfo::params::bgifile,
+  String $bgipath = $bginfo::params::bgipath,
   Boolean $setonstart = true,
 ) inherits bginfo::params {
-  validate_re($confpath, '^[a-zA-Z]:\\(((?![<>:"\/\\|?*]).)+((?<![ .])\\)?)*.bgi$', 'Confpath should be an absolute Windows Path to a bgi file')
+  validate_re($bgipath, '^[a-zA-Z]:\\(((?![<>:"\/\\|?*]).)+((?<![ .])\\)?)*.bgi$', 'Confpath should be an absolute Windows Path to a bgi file')
 
   require chocolatey
   
@@ -20,7 +20,7 @@ class bginfo (
   if $setonstart {
     file { 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp':
       ensure  => file,
-      content => template('bginfo/bginfo.bat', { 'confpath' => $confpath }),
+      content => template('bginfo/bginfo.bat', { 'confpath' => $bgipath }),
     }
   }
 }

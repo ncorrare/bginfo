@@ -1,5 +1,5 @@
 class bginfo::params {
-  $conffile = 'puppet:///modules/bginfo/default.cgi'
-  $confpath = 'c:\default.bgi'
+  $bgifile = 'puppet:///modules/bginfo/default.cgi'
+  $bgipath = 'c:\default.bgi'
 }
   
