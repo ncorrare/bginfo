@@ -12,9 +12,9 @@ class bginfo (
     provider => 'chocolatey',
   }
   
-  file { $confpath:
+  file { $bgipath:
     ensure  => file,
-    source  => $conffile,
+    source  => $bgifile,
     require => Package['bginfo'], 
   }
   if $setonstart {
