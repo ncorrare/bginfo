@@ -8,13 +8,17 @@ class bginfo (
 
   #Chocolatey will use the underlying libraries of the OS to download packages. So if ESC is enabled, download.sysinternals.com needs to be in that list.
   if $addtrustedsite {
-    registry_key { 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ESCDomains\download.sysinternals.com':
+    registry_key { 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ESCDomains\sysinternals.com':
       ensure => present,
     }
-    registry_value { 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ESCDomains\download.sysinternals.com\https':
+    registry_key { 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ESCDomains\sysinternals.com\download':
+      ensure => present,
+    }
+    registry_value { 'HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\ESCDomains\sysinternals.com\download\https':
       ensure => present,
       type   => dword,
-      data   => '0x00000002'
+      data   => '0x00000002',
+      before => Package['bginfo'],
     }
   }
   package { 'bginfo':
