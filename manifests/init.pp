@@ -3,7 +3,7 @@ class bginfo (
   String $bgipath = $bginfo::params::bgipath,
   Boolean $setonstart = true,
 ) inherits bginfo::params {
-  validate_re($bgipath, '^[a-zA-Z]:\\(((?![<>:"\/\\|?*]).)+((?<![ .])\\)?)*.bgi$', 'Confpath should be an absolute Windows Path to a bgi file')
+  #validate_re($bgipath, '^[a-zA-Z]:\\(((?![<>:"\/\\|?*]).)+((?<![ .])\\)?)*.bgi$', 'Confpath should be an absolute Windows Path to a bgi file')
 
   require chocolatey
   
