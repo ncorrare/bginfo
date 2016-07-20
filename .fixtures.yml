@@ -1,5 +1,9 @@
 fixtures:
   repositories:
+    registry:
+      repo: 'git://github.com/puppetlabs/puppetlabs-registry.git'
+      ref: '1.1.3'
+    chocolatey:
     stdlib:
       repo: 'git://github.com/puppetlabs/puppetlabs-stdlib.git'
       ref: '4.1.0'
