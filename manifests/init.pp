@@ -16,7 +16,7 @@ class bginfo (
     require => Package['bginfo'], 
   }
   if $setonstart {
-    file { 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp':
+    file { 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\bginfo.bat':
       ensure  => file,
       content => template('bginfo/bginfo.bat.erb'),
     }
