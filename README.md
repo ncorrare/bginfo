@@ -1,4 +1,4 @@
-# bginfo
+#bginfo
 
 #### Table of Contents
 
@@ -21,6 +21,7 @@ For more information on bginfo, visit https://technet.microsoft.com/en-us/sysint
 ### Beginning with bginfo
 
 There are three parameters in the init class:
- * $conffile: Puppet path to the configuration file.
- * $confpath: Where to store BGInfo configuration's file in the target system.
- * $setonstart: Configure a BAT script to start bginfo when any user logs in.
+ * String $conffile: Puppet path to the configuration file. Defaults to puppet:///bginfo/default.bgi.
+ * String $confpath: Where to store BGInfo configuration's file in the target system. Defaults to c:/default.bgi.
+ * Boolean $setonstart: Configure a BAT script to start bginfo when any user logs in.
+ * Boolean $addtrustedsite: If using ESC in Internet Explorer, add download.sysinternals.com to trusted sites for https only.

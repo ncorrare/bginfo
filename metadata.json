@@ -1,6 +1,6 @@
 {
   "name": "ncorrare-bginfo",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "ncorrare",
   "summary": "A module to set up bginfo from Sysinternals",
   "license": "Apache-2.0",
@@ -23,6 +23,10 @@
     }
   ],
   "dependencies": [
+    {
+      "name": "puppetlabs-registry",
+      "version_requirement": "1.x"
+    },
     {
       "name": "puppetlabs-stdlib",
       "version_requirement": "4.x"
