@@ -5,8 +5,6 @@ class bginfo (
 ) inherits bginfo::params {
   #validate_re($bgipath, '^[a-zA-Z]:\\(((?![<>:"\/\\|?*]).)+((?<![ .])\\)?)*.bgi$', 'Confpath should be an absolute Windows Path to a bgi file')
 
-  require chocolatey
-  
   package { 'bginfo':
     ensure   => installed,
     provider => 'chocolatey',
