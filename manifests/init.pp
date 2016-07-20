@@ -20,7 +20,7 @@ class bginfo (
   if $setonstart {
     file { 'C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp':
       ensure  => file,
-      content => template('bginfo/bginfo.bat.erb', { 'confpath' => $bgipath }),
+      content => template('bginfo/bginfo.bat.erb'),
     }
   }
 }
