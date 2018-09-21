@@ -1,5 +1,5 @@
 class bginfo::params {
-  $bgifile = 'puppet:///modules/bginfo/default.bgi'
-  $bgipath = 'c:/default.bgi'
+  $bgifile = hiera('bgifile','puppet:///modules/bginfo/default.bgi')
+  $bgipath = hiera('bgipath','c:/default.bgi')
 }
   
